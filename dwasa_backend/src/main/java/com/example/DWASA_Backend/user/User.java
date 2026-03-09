@@ -82,6 +82,12 @@ public class User {
 	@Column(name = "UPDATED_AT", nullable = false)
 	private java.time.OffsetDateTime updatedAt;
 
+	@Column(name = "CREATED_BY")
+	private Long createdBy;
+
+	@Column(name = "UPDATED_BY")
+	private Long updatedBy;
+
 	public Long getId() {
 		return id;
 	}
@@ -208,5 +214,21 @@ public class User {
 
 	public java.time.OffsetDateTime getUpdatedAt() {
 		return updatedAt;
+	}
+
+	public Long getCreatedBy() {
+		return createdBy;
+	}
+
+	public void setCreatedBy(Long createdBy) {
+		this.createdBy = createdBy;
+	}
+
+	public Long getUpdatedBy() {
+		return updatedBy;
+	}
+
+	public void setUpdatedBy(Long updatedBy) {
+		this.updatedBy = updatedBy;
 	}
 }

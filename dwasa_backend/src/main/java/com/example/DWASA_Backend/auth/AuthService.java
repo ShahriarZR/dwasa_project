@@ -32,6 +32,7 @@ public class AuthService {
 		// If legacy plaintext passwords exist, upgrade to BCrypt on successful login
 		if (!looksLikeBcrypt(storedPassword)) {
 			user.setPassword(passwordEncoder.encode(rawPassword));
+			user.setUpdatedBy(user.getId());
 			userRepository.save(user);
 		}
 

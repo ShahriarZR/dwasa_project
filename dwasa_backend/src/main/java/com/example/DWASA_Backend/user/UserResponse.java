@@ -1,6 +1,7 @@
 package com.example.DWASA_Backend.user;
 
 import java.time.LocalDate;
+import java.time.OffsetDateTime;
 
 public class UserResponse {
 	private final Long id;
@@ -17,6 +18,10 @@ public class UserResponse {
 	private final Gender gender;
 	private final String address;
 	private final String remarks;
+	private final Long createdBy;
+	private final Long updatedBy;
+	private final OffsetDateTime createdAt;
+	private final OffsetDateTime updatedAt;
 
 	public UserResponse(User user) {
 		this.id = user.getId();
@@ -33,6 +38,10 @@ public class UserResponse {
 		this.gender = user.getGender();
 		this.address = user.getAddress();
 		this.remarks = user.getRemarks();
+		this.createdBy = user.getCreatedBy();
+		this.updatedBy = user.getUpdatedBy();
+		this.createdAt = user.getCreatedAt();
+		this.updatedAt = user.getUpdatedAt();
 	}
 
 	public Long getId() {
@@ -89,5 +98,21 @@ public class UserResponse {
 
 	public String getRemarks() {
 		return remarks;
+	}
+
+	public Long getCreatedBy() {
+		return createdBy;
+	}
+
+	public Long getUpdatedBy() {
+		return updatedBy;
+	}
+
+	public OffsetDateTime getCreatedAt() {
+		return createdAt;
+	}
+
+	public OffsetDateTime getUpdatedAt() {
+		return updatedAt;
 	}
 }
